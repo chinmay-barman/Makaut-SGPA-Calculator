@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MAKAUT SGPA Calculator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="Container">
+    <div class="Calculator-Container">
+      <div class="SwitchMarks-Button"></div>
+      <div class="Calculator-Table">
+        <Table>
+          <caption>MAKAUT SEMESTER SGPA CALCULATOR</caption>
+          <thead>
+            <tr>
+              <th>Subject Name</th>
+              <th>Marks</th>
+              <th>Grade</th>
+              <th>Your Point</th>
+              <th>Subject Credit</th>
+              <th>Credit Point</th>
+              <th>Delete Subject</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><input type="text" placeholder="Subject Name"></td>
+              <td><input type="number" class="MarksInput" placeholder="(0-100) (CA+Attendence)"></td>
+              <td>NIL</td>
+              <td>0</td>
+              <td><input type="number" placeholder=""></td>
+              <td>0</td>
+              <td>X</td>
+            </tr>
+          </tbody>
+        </Table>
+      </div>
+      <div class="AddSubjectButton">
+        <button>Add Subject</button>
+      </div>
+    </div>
+    <div class="Rules-Container"></div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
