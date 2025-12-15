@@ -3,6 +3,10 @@ body{
 }
 .Container{
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 .Calculator-Container{
 }
@@ -25,4 +29,14 @@ body{
 }
 .AddSubjectButton button{
     background-color: orange;
+}
+.Rules-Container{
+}
+.Rules-Container Table{
+}
+.Rules-Container Table thead{
+    background-color: lime;
+}
+.Rules-Container Table tbody{
+    background-color: lightcoral;
 }
