@@ -25,6 +25,10 @@ body{
 .Calculator-Table Table tbody tr td input{
     text-align: center;
 }
+.TwoButtons{
+    display: flex;
+    justify-content: center;
+}
 .AddSubjectButton{
 }
 .AddSubjectButton button{

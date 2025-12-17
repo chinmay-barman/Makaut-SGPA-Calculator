@@ -1,5 +1,17 @@
 AddSubjectButton = document.querySelector('.AddSubjectButton button');
 AddSubjectButton.addEventListener('click', addSubject);
+CalculateSGPAButton = document.querySelector('.calculate button');
+
+CalculateSGPAButton.addEventListener('click', ()=>{
+    let totalCredits = 0;
+    let totalCreditPoints =0;
+    for(let i=0;i<document.querySelectorAll('.SubjectCreditsInput').length;i++){
+        totalCreditPoints += parseInt(document.querySelectorAll('.SubjectCreditsInput')[i].parentElement.nextElementSibling.innerHTML);
+        totalCredits += parseInt(document.querySelectorAll('.SubjectCreditsInput')[i].value)*10;
+    }
+    let SGPA = (totalCreditPoints/totalCredits)*10;
+    alert(`Yoru SGPA is ${SGPA.toFixed(2)}`);
+});
 
 function addSubject(){
     let newRow = document.createElement('tr');
@@ -19,6 +31,7 @@ function addSubject(){
 function calculateBothGradeAndPoint(marks){
     calculateGrade(marks);
     calculateYourPoint(marks);
+    calculateCreditPoint(marks.parentElement.nextElementSibling.nextElementSibling.nextElementSibling.children[0]); //To avoid marks change issue with credit point calculation id already calculated and then trying to update teh marks
 }
 function calculateGrade(marks){
     if(marks.value<40){
