@@ -26,11 +26,11 @@
           </thead>
           <tbody>
             <tr>
-              <td><input type="text" placeholder="Subject Name"></td>
-              <td><input type="number" class="MarksInput" placeholder="(0-100) (CA+Attendence)"></td>
+              <td><input type="text" placeholder=" 1 Subject Name"></td>
+              <td><input type="number" class="MarksInput" placeholder="(0-100) (CA+Attendence)" oninput="calculateBothGradeAndPoint(this)"></td>
               <td>NIL</td>
               <td>0</td>
-              <td><input type="number" placeholder=""></td>
+              <td><input type="number" class="SubjectCreditsInput" value="0" oninput="calculateCreditPoint(this)"></td>
               <td>0</td>
               <td>X</td>
             </tr>

@@ -1,28 +1,24 @@
 AddSubjectButton = document.querySelector('.AddSubjectButton button');
-MarksInput = document.querySelectorAll('.MarksInput');
-
 AddSubjectButton.addEventListener('click', addSubject);
-for(let i=0;i<MarksInput.length;i++){
-    MarksInput[i].addEventListener('input', ()=>{
-        calculateGrade(MarksInput[i]);
-        calculateYourPoint(MarksInput[i]);
-    })
-}
 
 function addSubject(){
     let newRow = document.createElement('tr');
     document.querySelector('.Calculator-Table Table tbody').appendChild(newRow);
     for(let i=0;i<7;i++){
         newData =document.createElement('td');
-        document.querySelector('.Calculator-Table Table tbody tr:last-Child').appendChild(newData);
+        newRow.appendChild(newData);
     }
-    newRow.children[0].innerHTML = '<input type="text" placeholder="Subject Name">';
-    newRow.children[1].innerHTML = '<input type="number" class="MarksInput" placeholder="(0-100) (CA+Attendence)">';
+    newRow.children[0].innerHTML = `<input type="text" placeholder="${document.querySelector('.Calculator-Table Table tbody').childElementCount} Subject Name">`;
+    newRow.children[1].innerHTML = '<input type="number" class="MarksInput" placeholder="(0-100) (CA+Attendence)" oninput="calculateBothGradeAndPoint(this)">';
     newRow.children[2].innerHTML = "NIL";
     newRow.children[3].innerHTML = "0";
-    newRow.children[4].innerHTML = '<input type="number" placeholder="">';
+    newRow.children[4].innerHTML = '<input type="number" value="0" class="SubjectCreditsInput" oninput="calculateCreditPoint(this)">';
     newRow.children[5].innerHTML = "0";
     newRow.children[6].innerHTML = "X";
+}
+function calculateBothGradeAndPoint(marks){
+    calculateGrade(marks);
+    calculateYourPoint(marks);
 }
 function calculateGrade(marks){
     if(marks.value<40){
@@ -75,4 +71,7 @@ function calculateYourPoint(marks){
     else{
         marks.parentElement.nextElementSibling.innerHTML = "0";
     }
+}
+function calculateCreditPoint(credit){
+    credit.parentElement.nextElementSibling.innerHTML = parseInt(credit.parentElement.previousElementSibling.innerHTML) * parseInt(credit.value);
 }
