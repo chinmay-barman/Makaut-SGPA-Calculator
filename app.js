@@ -10,7 +10,7 @@ CalculateSGPAButton.addEventListener('click', ()=>{
         totalCredits += parseInt(document.querySelectorAll('.SubjectCreditsInput')[i].value)*10;
     }
     let SGPA = (totalCreditPoints/totalCredits)*10;
-    alert(`Yoru SGPA is ${SGPA.toFixed(2)}`);
+    showResultTable(SGPA.toFixed(2), totalCreditPoints);
 });
 
 function addSubject(){
@@ -87,4 +87,11 @@ function calculateYourPoint(marks){
 }
 function calculateCreditPoint(credit){
     credit.parentElement.nextElementSibling.innerHTML = parseInt(credit.parentElement.previousElementSibling.innerHTML) * parseInt(credit.value);
+}
+function showResultTable(sgpa, totalCreditPoints){
+    document.querySelector('.ResultTable tbody tr').children[0].innerHTML = sgpa;
+    document.querySelector('.ResultTable tbody tr').children[1].innerHTML = totalCreditPoints;
+    document.querySelector('.ResultTable tbody tr').children[2].innerHTML = `${sgpa*10}%`;
+    document.querySelector('.ResultTable tbody tr').children[3].innerHTML = `${(sgpa-0.75)*10}%`;
+    document.querySelector('.ResultTable').hidden = false;
 }

@@ -34,6 +34,16 @@ body{
 .AddSubjectButton button{
     background-color: orange;
 }
+.ResultContainer{
+    display: flex;
+    justify-content: center;
+}
+.ResultTable thead tr th{
+    background-color: orange;
+}
+.ResultTable tbody tr td{
+    background-color: lightblue;
+}
 .Rules-Container{
 }
 .Rules-Container Table{
