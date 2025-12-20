@@ -21,12 +21,12 @@ function addSubject(){
         newRow.appendChild(newData);
     }
     newRow.children[0].innerHTML = `<input type="text" placeholder="${document.querySelector('.Calculator-Table Table tbody').childElementCount} Subject Name">`;
-    newRow.children[1].innerHTML = '<input type="number" class="MarksInput" placeholder="(0-100) (CA+Attendence)" oninput="calculateBothGradeAndPoint(this)">';
+    newRow.children[1].innerHTML = '<input type="number" class="MarksInput" placeholder="(0-100)" oninput="calculateBothGradeAndPoint(this)">';
     newRow.children[2].innerHTML = "NIL";
     newRow.children[3].innerHTML = "0";
     newRow.children[4].innerHTML = '<input type="number" value="0" class="SubjectCreditsInput" oninput="calculateCreditPoint(this)">';
     newRow.children[5].innerHTML = "0";
-    newRow.children[6].innerHTML = "X";
+    newRow.children[6].innerHTML = '<p onclick="deleteSubject(this)" style="cursor: pointer; color: #cf6679">X</p>';
 }
 function calculateBothGradeAndPoint(marks){
     calculateGrade(marks);
@@ -94,4 +94,7 @@ function showResultTable(sgpa, totalCreditPoints){
     document.querySelector('.ResultTable tbody tr').children[2].innerHTML = `${sgpa*10}%`;
     document.querySelector('.ResultTable tbody tr').children[3].innerHTML = `${(sgpa-0.75)*10}%`;
     document.querySelector('.ResultTable').hidden = false;
+}
+function deleteSubject(deleteElement){
+    deleteElement.parentElement.parentElement.remove();
 }
