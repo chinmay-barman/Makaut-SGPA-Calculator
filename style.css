@@ -1,5 +1,7 @@
 body{
     font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    background-color: #121212;
 }
 .Container{
     text-align: center;
@@ -17,22 +19,52 @@ body{
 .Calculator-Table Table{
 }
 .Calculator-Table Table thead {
-    background-color: aqua;
+    background-color: #3a2d49;
+}
+.Calculator-Table Table thead tr th{
+    padding: 15px;
+    border-radius: 10px;
 }
 .Calculator-Table Table tbody {
-    background-color: yellow;
+    background-color: #51465f;
+}
+.Calculator-Table Table tbody tr td{
+    border-radius: 8px;
 }
 .Calculator-Table Table tbody tr td input{
+    background-color: #927daa;
     text-align: center;
+    padding: 15px;
+    border-radius: 8px;
+    border: none;
+}
+.Calculator-Table Table tbody tr td input ::placeholder{
+    color: black;
 }
 .TwoButtons{
+    margin: 25px 0px 25px 0px;
     display: flex;
     justify-content: center;
 }
+.calculate{
+    margin-right: 30px;
+}
+.calculate button{
+    width: 100px;
+    background-color: lightgreen;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+}
 .AddSubjectButton{
+    margin-left: 30px;
 }
 .AddSubjectButton button{
+    width: 100px;
     background-color: orange;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
 }
 .ResultContainer{
     display: flex;
@@ -40,17 +72,30 @@ body{
 }
 .ResultTable thead tr th{
     background-color: orange;
+    padding: 10px;
+    border-radius: 8px;
 }
 .ResultTable tbody tr td{
     background-color: lightblue;
+    padding: 10px;
+    border-radius: 8px;
 }
 .Rules-Container{
+    margin-top: 25px;
 }
 .Rules-Container Table{
 }
 .Rules-Container Table thead{
-    background-color: lime;
+    background-color: #1f1f1f;
+}
+.Rules-Container Table thead tr th{
+    padding: 15px;
+    border-radius: 8px;
 }
 .Rules-Container Table tbody{
-    background-color: lightcoral;
+    background-color: #292929;
+}
+.Rules-Container Table tbody tr td{
+    padding: 15px;
+    border-radius: 8px;
 }
