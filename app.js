@@ -27,6 +27,8 @@ function addSubject(){
     newRow.children[4].innerHTML = '<input type="number" value="0" class="SubjectCreditsInput" oninput="calculateCreditPoint(this)">';
     newRow.children[5].innerHTML = "0";
     newRow.children[6].innerHTML = '<p onclick="deleteSubject(this)" style="cursor: pointer; color: #cf6679">X</p>';
+
+    document.querySelector('.ResultTable').hidden = true;
 }
 function calculateBothGradeAndPoint(marks){
     calculateGrade(marks);
