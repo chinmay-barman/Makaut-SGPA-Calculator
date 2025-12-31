@@ -26,7 +26,7 @@ function addSubject(){
     newRow.children[3].innerHTML = "0";
     newRow.children[4].innerHTML = '<input type="number" value="0" class="SubjectCreditsInput" oninput="calculateCreditPoint(this)">';
     newRow.children[5].innerHTML = "0";
-    newRow.children[6].innerHTML = '<p onclick="deleteSubject(this)" style="cursor: pointer; color: #cf6679">X</p>';
+    newRow.children[6].innerHTML = '<p class="DeleteParagraph" onclick="deleteSubject(this)" style="cursor: pointer; color: #cf6679">Remove</p>';
 
     document.querySelector('.ResultTable').hidden = true;
 }
